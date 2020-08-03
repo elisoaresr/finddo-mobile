@@ -63,3 +63,12 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# Stacks
+.buckconfig
+.eslintrc.js
+.gitattributes
+.prettierrc.js
+.watchmanconfig
+babel.config.js
+metro.config.js
