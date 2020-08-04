@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -6,19 +6,20 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import '../../config/statusBarConfig';
-
 const Home = () => {
+
+useEffect(() => {
+
+})
   return (
-    <>
-      <SafeAreaView style={styles.container}>
-        <View>
-          <Text>Hello World!</Text>
-        </View>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text>Hello World!</Text>
+      </View>
+    </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -28,5 +29,6 @@ const styles = StyleSheet.create({
   }
 });
 
-
 export default Home;
+
+
