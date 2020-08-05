@@ -54,15 +54,14 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: 45
   },
 
   main: {
     flex: 1,
-    
-   
+    justifyContent: 'center'
   },
 
   logo: {
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
 
   title: {
     color: '#322153',
-    
+
   },
   description: {
     color: '#6C6C80',
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     width: '90%',
     marginBottom: 20,
-    color: '#FFF',
+    color: '#222',
     fontSize: 17,
     borderRadius: 12,
     padding: 10,
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 7,
+    borderRadius: 12,
   },
 
   submitText: {
