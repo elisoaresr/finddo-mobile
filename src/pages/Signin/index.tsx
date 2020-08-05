@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useContext }from 'react';
+import AuthContext from '../../contexts/auth';
 import {
   View,
   Image,
@@ -10,13 +10,13 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const Login = () => {
+const Signin = () => {
+  const { signed, signIn } = useContext(AuthContext); 
+  console.log(signed);
 
-const navigation = useNavigation();
-
-function handleNavigatetoHome(){
-  navigation.navigate('Home');
-}
+  function handlesignIn() {
+    signIn();
+  } 
 
   return (
     <ImageBackground
@@ -46,12 +46,12 @@ function handleNavigatetoHome(){
         onChangeText={() => { }}
       />
 
-      <TouchableOpacity style={styles.btnSubmit} onPress={handleNavigatetoHome}>
+      <TouchableOpacity style={styles.btnSubmit} onPress={handlesignIn}>
         <Text style={styles.submitText}>Acessar</Text>
       </TouchableOpacity>
 
 
-      <TouchableOpacity style={styles.btnRegister}> 
+      <TouchableOpacity style={styles.btnRegister}>
         <Text style={styles.RegisterText}>Criar conta gratuita</Text>
       </TouchableOpacity>
     </ImageBackground>
@@ -119,6 +119,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Signin;
 
 
