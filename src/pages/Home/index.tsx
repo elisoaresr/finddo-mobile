@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
   View,
   Image,
@@ -10,6 +11,15 @@ import {
 } from 'react-native';
 
 const Home = () => {
+
+const navigation = useNavigation();
+
+function handleNavigatetoUsers(){
+  navigation.navigate('Users');
+
+}
+
+
   return (
     <ImageBackground
       source={require('../../../assets/img/pok.png')}
@@ -19,8 +29,8 @@ const Home = () => {
       <View style={styles.main}>
         <View>
           <Image style={styles.logo} source={require('../../../assets/img/logo.png')} />
-          <Text style={styles.title}>Catalogando pokémons</Text>
-          <Text style={styles.description}>Captura de póks</Text>
+          <Text style={styles.title}>A aventura está apenas começando...</Text>
+          <Text style={styles.description}>Treine seu pokémon!</Text>
         </View>
       </View>
 
@@ -38,12 +48,12 @@ const Home = () => {
         onChangeText={() => { }}
       />
 
-      <TouchableOpacity style={styles.btnSubmit}>
+      <TouchableOpacity style={styles.btnSubmit} onPress={handleNavigatetoUsers}>
         <Text style={styles.submitText}>Acessar</Text>
       </TouchableOpacity>
 
 
-      <TouchableOpacity style={styles.btnRegister}>
+      <TouchableOpacity style={styles.btnRegister}> 
         <Text style={styles.RegisterText}>Criar conta gratuita</Text>
       </TouchableOpacity>
     </ImageBackground>
