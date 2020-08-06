@@ -1,31 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
-import axios from 'axios'
+import { View, Text, StyleSheet, Button } from 'react-native';
+
 import AuthContext from '../../contexts/auth';
 
+interface Item {
+  id: number,
+  name: string,
+  url: string
+}
+
 const Home = () => {
-  const [data, setData] = useState([]);
   const { signOut } = useContext(AuthContext)
 
   function handleSignOut() {
     signOut();
   }
 
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Menu de Ações</Text>
       <Button title="Sign Out" onPress={handleSignOut} />
-
-
-    <TouchableOpacity style={styles.item} onPress={() => {}}>
-      <Text style={styles.itemTitle}>Pokémons</Text>
-    </TouchableOpacity>
-
-
     </View>
-  );
-}
+    );
+  }
 
 const styles = StyleSheet.create({
   container: {
@@ -42,23 +39,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 32,
   },
-
-  item: {
-    backgroundColor: '#fff',
-    borderWidth: 2,
-    borderColor: '#eee',
-    height: 120,
-    width: 120,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingTop: 20,
-    paddingBottom: 16,
-    marginRight: 8,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-
-    textAlign: 'center',
-  },
+  
   itemTitle: {
     fontFamily: 'Roboto_400Regular',
     textAlign: 'center',
